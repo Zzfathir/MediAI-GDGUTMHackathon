@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-brand: #2ecc71; /* Emerald/Green for health */
+  --color-brand-light: #e8f8f5;
+  --color-emergency: #e74c3c;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+.chat-bubble-user {
+  @apply bg-brand text-white rounded-2xl rounded-tr-none px-4 py-2 max-w-[80%];
+}
+
+.chat-bubble-ai {
+  @apply bg-white border border-slate-200 text-slate-800 rounded-2xl rounded-tl-none px-4 py-2 max-w-[80%];
+}

@@ -1,0 +1,106 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Core health profile of the user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "age": { "type": "integer" },
+        "weight": { "type": "number" },
+        "height": { "type": "number" },
+        "bloodType": { "type": "string" },
+        "allergies": { "type": "string" },
+        "medications": { "type": "string" },
+        "conditions": { "type": "string" },
+        "location": { "type": "string" },
+        "language": { "type": "string" },
+        "isProfileComplete": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "email"]
+    },
+    "SymptomLog": {
+      "title": "Symptom Log",
+      "description": "Record of symptoms reported by the user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "symptoms": { "type": "string" },
+        "severity": { "type": "integer" },
+        "duration": { "type": "string" },
+        "diagnosisSummary": { "type": "string" }
+      },
+      "required": ["userId", "timestamp", "symptoms"]
+    },
+    "MedicationReminder": {
+      "title": "Medication Reminder",
+      "description": "Schedule for taking medications.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "dose": { "type": "string" },
+        "schedule": { "type": "string" },
+        "frequency": { "type": "string" },
+        "instructions": { "type": "string" },
+        "lastTakenAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "name", "schedule"]
+    },
+    "JournalEntry": {
+      "title": "Journal Entry",
+      "description": "Daily mental health check-ins and notes.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "type": { "type": "string", "enum": ["Mood", "Energy", "Sleep", "Stress", "Note"] },
+        "moodScore": { "type": "integer" },
+        "energyLevel": { "type": "string" },
+        "sleepHours": { "type": "number" },
+        "stressLevel": { "type": "string" },
+        "note": { "type": "string" }
+      },
+      "required": ["userId", "timestamp", "type"]
+    },
+    "LabResult": {
+      "title": "Lab Result",
+      "description": "Analyzed medical documents.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "documentType": { "type": "string" },
+        "summary": { "type": "string" },
+        "findings": { "type": "string" }
+      },
+      "required": ["userId", "timestamp", "documentType"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile document."
+    },
+    "/users/{userId}/symptoms/{symptomId}": {
+      "schema": "SymptomLog",
+      "description": "Collection of symptom logs for a user."
+    },
+    "/users/{userId}/reminders/{reminderId}": {
+      "schema": "MedicationReminder",
+      "description": "Collection of medication reminders for a user."
+    },
+    "/users/{userId}/journal/{entryId}": {
+      "schema": "JournalEntry",
+      "description": "Collection of journal entries for a user."
+    },
+    "/users/{userId}/lab_results/{resultId}": {
+      "schema": "LabResult",
+      "description": "Collection of lab results for a user."
+    }
+  }
+}

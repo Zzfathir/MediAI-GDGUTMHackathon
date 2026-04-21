@@ -1,0 +1,9 @@
+{
+  "name": "MediAI",
+  "description": "Compassionate and knowledgeable AI health assistant for symptoms, medications, medical documents, and mental wellness.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
