@@ -1,9 +1,10 @@
 {
-  apiKey: "AIzaSyC3shgnvprDb0q5oVXNZxvz3SPba6YQJ8c",
-  authDomain: "mediai-8cfec.firebaseapp.com",
-  projectId: "mediai-8cfec",
-  storageBucket: "mediai-8cfec.firebasestorage.app",
-  messagingSenderId: "750533097225",
-  appId: "1:750533097225:web:245b0f21e7d3100ec205d8",
-  measurementId: "G-CPRP047BNP"
+  "projectId": "gen-lang-client-0151273717",
+  "appId": "1:119368923309:web:3ae0c3030b9d9bd6b92e24",
+  "apiKey": "AIzaSyC9brCzD4sLlYULjj2KTnOF9wdTq0ERsY8",
+  "authDomain": "gen-lang-client-0151273717.firebaseapp.com",
+  "firestoreDatabaseId": "ai-studio-3d294d93-0aaf-4fe3-b65c-7a95dd52b610",
+  "storageBucket": "gen-lang-client-0151273717.firebasestorage.app",
+  "messagingSenderId": "119368923309",
+  "measurementId": ""
 }
